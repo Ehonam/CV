@@ -1,0 +1,1 @@
+Professionnel polyvalent avec plus de 10 ans d'expérience en marketing, communication et gestion de projets. Actuellement en formation dans le développement web, je combine expertise événementielle, création de contenu pédagogique et compétences techniques. Recherche un stage de 3 mois et demi dès octobre 2025 pour appliquer mes compétences en développement web.
