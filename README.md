@@ -2,8 +2,6 @@
 
 Ce dépôt contient mon CV en ligne, conçu en HTML et CSS pour être hébergé sur GitHub Pages. 
 
-Un bouton sur la page génère automatiquement un PDF.
-
 ## 📑 Aperçu
 
 Ce CV en ligne présente mon parcours professionnel, mes compétences et ma formation dans le domaine du développement web et du marketing digital.
@@ -12,7 +10,6 @@ Ce CV en ligne présente mon parcours professionnel, mes compétences et ma form
 
 - HTML5
 - CSS3
-- JAVASCRIPT
 - GitHub Pages
 
 ## 🚀 Déploiement
@@ -28,7 +25,6 @@ CV/
 ├── styles.css          # Feuille de style CSS
 ├── photo.jpeg          # Photo de profil 
 ├── qr.png              # QR code GitHub
-│__ script.js           # Fichier JavaScript
 └── README.md           # Documentation du projet
 ```
 
