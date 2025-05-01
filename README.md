@@ -1,6 +1,8 @@
 # CV en ligne - Koffi Ehonam Hamenou
 
-Ce dépôt contient mon CV en ligne, conçu en HTML et CSS pour être hébergé sur GitHub Pages.
+Ce dépôt contient mon CV en ligne, conçu en HTML et CSS pour être hébergé sur GitHub Pages. 
+
+Un bouton sur la page génère automatiquement un PDF.
 
 ## 📑 Aperçu
 
@@ -10,6 +12,7 @@ Ce CV en ligne présente mon parcours professionnel, mes compétences et ma form
 
 - HTML5
 - CSS3
+- JAVASCRIPT
 - GitHub Pages
 
 ## 🚀 Déploiement
@@ -25,35 +28,17 @@ CV/
 ├── styles.css          # Feuille de style CSS
 ├── photo.jpeg          # Photo de profil 
 ├── qr.png              # QR code GitHub
-│
+│__ script.js           # Fichier JavaScript
 └── README.md           # Documentation du projet
 ```
 
-## 📝 Instructions d'installation
-
-1. Clonez ce dépôt :
-   ```bash
-   git clone https://github.com/Ehonam/CV.git
-   ```
-
-2. Naviguez dans le dossier du projet :
-   ```bash
-   cd CV
-   ```
-
-3. Ouvrez `index.html` dans votre navigateur pour visualiser le CV.
 
 ## 🔄 Mise à jour
 
 Pour mettre à jour le CV :
 
-1. Modifiez les fichiers HTML et CSS selon vos besoins
-2. Poussez les modifications vers GitHub :
-   ```bash
-   git add .
-   git commit -m "Mise à jour du CV"
-   git push origin main
-   ```
+Modifiez les fichiers HTML et CSS selon vos besoins
+
 
 ## 📱 Responsive
 
