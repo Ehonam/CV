@@ -1,198 +1,942 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CV en ligne de Koffi Ehonam Hamenou - Développeur Web en recherche de stage">
-    <meta name="keywords" content="développeur web, Koffi Ehonam Hamenou, CV, portfolio, stage, développement web">
-    <title>Koffi Ehonam Hamenou - Développeur Web</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV de Koffi Ehonam Hamenou — Consultant DPO Junior & Privacy Engineer, Strasbourg" />
+  <meta name="keywords" content="DPO, RGPD, Privacy Engineer, consultant conformité, Strasbourg, développeur web" />
+  <title>Koffi Ehonam Hamenou — Consultant DPO Junior & Privacy Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0d1b2a;
+      --ink:     #1a2e42;
+      --steel:   #2e4a63;
+      --accent:  #c8973a;
+      --accent2: #e8b96a;
+      --light:   #f5f0e8;
+      --paper:   #fdfaf5;
+      --muted:   #8a9db5;
+      --border:  #d4c9b5;
+      --white:   #ffffff;
+
+      --serif:   'Playfair Display', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+
+      --gap:     1.5rem;
+      --radius:  4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page Layout ── */
+    .cv-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 0 60px rgba(13,27,42,0.12);
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3.5rem 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cv-header::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,151,58,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cv-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), transparent);
+    }
+
+    .header-inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-photo img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 5px rgba(200,151,58,0.2), 0 4px 20px rgba(0,0,0,0.3);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    .header-left h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .header-left .tagline {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent2);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .header-left .location {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.3px;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin-top: 1.4rem;
+    }
+
+    .contact-grid a, .contact-grid span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .contact-grid a:hover { color: var(--accent2); }
+
+    .contact-grid .icon {
+      width: 14px; height: 14px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .header-badge {
+      background: rgba(200,151,58,0.15);
+      border: 1px solid rgba(200,151,58,0.4);
+      border-radius: var(--radius);
+      padding: 0.8rem 1.2rem;
+      text-align: center;
+      min-width: 130px;
+    }
+
+    .header-badge .badge-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent2);
+      opacity: 0.8;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .header-badge .badge-value {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .lang-pills {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+      justify-content: center;
+    }
+
+    .lang-pill {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ── Body layout ── */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+    }
+
+    /* ── Main Column ── */
+    .cv-main {
+      padding: 2.5rem 2.5rem 2.5rem 3rem;
+      border-right: 1px solid var(--border);
+    }
+
+    /* ── Sidebar ── */
+    .cv-sidebar {
+      padding: 2.5rem 1.8rem;
+      background: var(--light);
+    }
+
+    /* ── Section Headers ── */
+    .section { margin-bottom: 2.2rem; }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title-sm {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--steel);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Profile ── */
+    .profile-text {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--steel);
+    }
+
+    .profile-text strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* ── Profile blocks ── */
+    .profile-blocks {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .profile-block {
+      border-left: 3px solid var(--border);
+      padding: 0.6rem 0.9rem;
+      background: var(--paper);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .profile-block--accent {
+      border-left-color: var(--accent);
+      background: rgba(200,151,58,0.05);
+    }
+
+    .profile-block-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .profile-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .profile-list li {
+      font-size: 0.85rem;
+      color: var(--steel);
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+      line-height: 1.55;
+    }
+
+    .profile-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    /* ── Experience ── */
+    .exp-item {
+      margin-bottom: 1.6rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.45rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--navy);
+    }
+
+    .exp-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      font-style: italic;
+    }
+
+    .exp-company {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-context {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-list li {
+      font-size: 0.82rem;
+      color: var(--steel);
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.25rem;
+      line-height: 1.5;
+    }
+
+    .exp-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    /* ── Timeline bar for experience section ── */
+    .cv-main .section.exp-section {
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--border);
+      margin-left: 0.5rem;
+    }
+
+    /* ── Skills ── */
+    .skills-group { margin-bottom: 1.2rem; }
+
+    .skills-group-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .skill-tag {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.75rem;
+      color: var(--steel);
+      font-weight: 500;
+    }
+
+    .skill-tag.primary {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    .skill-tag.accent {
+      background: rgba(200,151,58,0.12);
+      border-color: rgba(200,151,58,0.4);
+      color: var(--navy);
+    }
+
+    /* ── Formation ── */
+    .edu-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .edu-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    .edu-school {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .edu-date {
+      font-size: 0.73rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .edu-note {
+      font-size: 0.75rem;
+      color: var(--steel);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Projects ── */
+    .project-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 0.7rem 0.9rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .project-name {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .project-desc {
+      font-size: 0.75rem;
+      color: var(--steel);
+      line-height: 1.45;
+    }
+
+    /* ── Certifs / Badges ── */
+    .certif-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--steel);
+    }
+
+    .certif-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+
+    /* ── Langues ── */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .lang-name { color: var(--navy); font-weight: 500; }
+
+    .lang-level {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .lang-bar {
+      display: flex;
+      gap: 3px;
+      margin-top: 3px;
+    }
+
+    .lang-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .lang-dot.filled { background: var(--accent); }
+
+    /* ── Footer ── */
+    .cv-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.3px;
+    }
+
+    .cv-footer a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: white; font-size: 12px; }
+      .cv-wrapper { box-shadow: none; max-width: 100%; }
+      .cv-header { padding: 2rem; }
+      .cv-header::before { display: none; }
+      .cv-main { padding: 1.5rem 2rem; }
+      .cv-sidebar { padding: 1.5rem; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-sidebar { border-top: 1px solid var(--border); }
+      .cv-main { padding: 1.8rem 1.5rem; border-right: none; }
+      .header-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .header-badge { display: none; }
+      .header-photo img { width: 80px; height: 80px; margin: 0 auto 0.5rem; }
+      .cv-header { padding: 2rem 1.5rem 2rem; }
+      .header-left h1 { font-size: 2rem; }
+      .contact-grid { justify-content: center; }
+      .exp-item::before { left: -1.5rem; }
+      .cv-main .section.exp-section { padding-left: 1rem; }
+    }
+
+    /* ── Animations (screen only) ── */
+    @media screen {
+      .cv-header, .cv-main, .cv-sidebar {
+        animation: fadeIn 0.5s ease both;
+      }
+      .cv-main { animation-delay: 0.1s; }
+      .cv-sidebar { animation-delay: 0.2s; }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="photo-container">
-                <img src="photo.jpeg" alt="Koffi Ehonam Hamenou" />
-            </div>
-            <div class="header-content">
-                <h1>KOFFI EHONAM HAMENOU</h1>
-                <h2>STAGIAIRE DÉVELOPPEMENT WEB</h2>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Strasbourg, FRANCE</p>
-                    <p><i class="fas fa-mobile-alt"></i> +33 6 41 15 43 37</p>
-                    <p><i class="fas fa-envelope"></i> ehonam.hamenou@gmail.com</p>
-                    <p><i class="fas fa-car"></i> Permis B</p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/koffi-hamenou-20224a106/" target="_blank" rel="noopener noreferrer">koffi-hamenou-20224a106</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/Ehonam" target="_blank" rel="noopener noreferrer">Ehonam</a></p>
-                </div>
-            </div>
-            <div class="qr-code">
-                <img src="qr.png" alt="QR Code GitHub" />
-            </div>
-        </header>
 
-        <div class="content">
-            <!-- Profile - Full Width -->
-            <section class="profile full-width">
-                <h3>PROFIL</h3>
-                <p>Professionnel polyvalent avec plus de 10 ans d'expérience en marketing, communication et gestion de
-                    projets. Actuellement en formation dans le développement web, je combine expertise événementielle,
-                    création de contenu pédagogique et compétences techniques. Recherche un stage de 3 mois et demi dès
-                    octobre 2025 pour appliquer mes compétences en développement web.</p>
-            </section>
+<div class="cv-wrapper">
 
-            <div class="two-column">
-                <!-- Left Column -->
-                <div class="left-column">
-                    <!-- Technical Skills -->
-                    <section class="skills">
-                        <h3>COMPÉTENCES TECHNIQUES</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">WordPress</span>
-                            <span class="skill-tag">GitHub</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">SCRUM</span>
-                        </div>
-                    </section>
+  <!-- ═══ HEADER ═══ -->
+  <header class="cv-header">
+    <div class="header-inner">
+      <div class="header-photo">
+        <img src="photo.jpeg" alt="Koffi Ehonam Hamenou" />
+      </div>
+      <div class="header-left">
+        <div class="tagline">Consultant DPO Junior &amp; Privacy Engineer · CDA RNCP · Stage cabinet DPO · PHP · WordPress · SQL</div>
+        <h1>Koffi Ehonam<br>Hamenou</h1>
+        <div class="location">📍 Strasbourg, France &nbsp;·&nbsp; Grand Est &nbsp;·&nbsp; Luxembourg</div>
 
-                    <!-- Education -->
-                    <section class="education">
-                        <h3>FORMATION</h3>
-                        <div class="education-item">
-                            <div class="date">2025 - 2026</div>
-                            <div class="title">CONCEPTEUR DÉVELOPPEUR D'APPLICATIONS (CDA)</div>
-                            <div class="location">M2I Formation, Schiltigheim</div>
-                            <div class="description">BAC+3/4, titre RNCP de niveau 6</div>
-                        </div>
-                        <div class="education-item">
-                            <div class="date">2015 - 2016</div>
-                            <div class="title">MASTER 2 MARKETING ET GESTION D'ÉVÉNEMENTS</div>
-                            <div class="location">EM Strasbourg Business School</div>
-                        </div>
-                        <div class="education-item">
-                            <div class="date">2005 - 2006</div>
-                            <div class="title">DUT GÉNIE MÉCANIQUE</div>
-                            <div class="location">Université Lyon 1</div>
-                        </div>
-                    </section>
-
-                    <!-- Languages -->
-                    <section class="languages">
-                        <h3>LANGUES</h3>
-                        <div class="language-item">
-                            <span>Français</span>
-                            <span>Langue maternelle</span>
-                        </div>
-                        <div class="language-item">
-                            <span>Anglais</span>
-                            <span>Courant (B2)</span>
-                        </div>
-                    </section>
-
-                    <!-- Interests -->
-                    <section class="interests">
-                        <h3>CENTRES D'INTÉRÊT</h3>
-                        <ul>
-                            <li>Technologie</li>
-                            <li>Écriture</li>
-                            <li>Éducation</li>
-                            <li>Engagement associatif</li>
-                        </ul>
-                    </section>
-                </div>
-
-                <!-- Right Column -->
-                <div class="right-column">
-                    <!-- Professional Experience -->
-                    <section class="experience">
-                        <h3>EXPÉRIENCES PROFESSIONNELLES</h3>
-                        <div class="experience-item">
-                            <div class="date">Juin - Novembre 2024</div>
-                            <div class="title">CHEF DE PROJET ÉVÉNEMENTIEL</div>
-                            <div class="location">CFAN, Aboisso, Côte d'Ivoire</div>
-                            <div class="description">
-                                <ul>
-                                    <li>Organisation de 75 événements (30 000 participants), gestion d'équipe et budget
-                                        de 20K€</li>
-                                    <li>Supervision des aspects logistiques, sécuritaires et promotionnels</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="date">2020 - 2023</div>
-                            <div class="title">EMPLOYÉ EXPERT</div>
-                            <div class="location">Five Guys Strasbourg</div>
-                            <div class="description">
-                                <ul>
-                                    <li>Formation d'employés et gestion numérique des stocks</li>
-                                    <li>Participation à l'ouverture de l'établissement</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="date">2018 - 2020</div>
-                            <div class="title">TECHNICIEN ÉVÉNEMENTIEL</div>
-                            <div class="location">Comptoir des Makers / AV-Lab Fablab Strasbourg</div>
-                            <div class="description">
-                                <ul>
-                                    <li>Gestion administrative et coordination pour événements majeurs</li>
-                                    <li>Initiation aux techniques de fabrication numérique</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="date">2016</div>
-                            <div class="title">WEB MARKETEUR</div>
-                            <div class="location">Wine Scholar Guild Labaroche</div>
-                            <div class="description">
-                                <ul>
-                                    <li>Création de contenus et webinaires, gestion de campagnes digitales</li>
-                                    <li>Administration CRM et analyse données clients</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="date">2009 - 2010</div>
-                            <div class="title">CHEF DE PROJET COMMUNICATION</div>
-                            <div class="location">Progressif Media Strasbourg</div>
-                            <div class="description">
-                                <ul>
-                                    <li>Gestion projets web (10+ clients) et maintenance WordPress</li>
-                                    <li>Développement stratégies SEO et analyse performances</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-
-            <footer>
-                <p>© 2025 Koffi Ehonam Hamenou - CV créé en HTML/CSS</p>
-                <p class="github-link">
-                    <a href="https://github.com/Ehonam/CV" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i> Code source disponible sur GitHub
-                    </a>
-                </p>
-            </footer>
+        <div class="contact-grid">
+          <a href="tel:+33641154337">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.0 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            +33 6 41 15 43 37
+          </a>
+          <a href="mailto:ehonam.hamenou@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            ehonam.hamenou@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/koffi-hamenou-20224a106" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            koffi-hamenou-20224a106
+          </a>
+          <a href="https://github.com/Ehonam" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            github.com/Ehonam
+          </a>
+          <span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Permis B
+          </span>
         </div>
+      </div>
+
+      <div class="header-badge">
+        <span class="badge-label">Titre RNCP</span>
+        <div class="badge-value">Master 2<br>Bac+5</div>
+        <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">CDA RNCP Niv. 6 · 2026</div>
+        <div class="lang-pills" style="margin-top:0.8rem;">
+          <span class="lang-pill">FR</span>
+          <span class="lang-pill">EN</span>
+          <span class="lang-pill">DE</span>
+        </div>
+        <div style="margin-top:0.9rem;padding-top:0.7rem;border-top:1px solid rgba(200,151,58,0.3);">
+          <span style="display:inline-block;background:rgba(200,151,58,0.25);border:1px solid rgba(200,151,58,0.6);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.65rem;color:#e8b96a;letter-spacing:0.5px;">● Disponible</span>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Animation pour le chargement de la page
-            document.body.classList.add('loaded');
-        });
-    </script>
+  <!-- ═══ BODY ═══ -->
+  <div class="cv-body">
 
+    <!-- ── MAIN COLUMN ── -->
+    <main class="cv-main">
+
+      <!-- PROFIL -->
+      <section class="section">
+        <h2 class="section-title">Profil professionnel</h2>
+        <p class="profile-text">
+          J'ai le profil qui combine une <strong>expertise technique</strong> (titre CDA RNCP + Master 2, niveau Bac+5) et une expérience concrète dans un <strong>cabinet DPO externalisé</strong> — avec, en arrière-plan, plus de <strong>10 ans de gestion de projets complexes</strong> dans des contextes exigeants (marketing, événementiel, équipes internationales).
+        </p>
+
+        <div class="profile-blocks">
+          <div class="profile-block">
+            <div class="profile-block-title">Ce que je fais concrètement</div>
+            <ul class="profile-list">
+              <li>Auditer des systèmes informatiques sous l'angle de la conformité RGPD</li>
+              <li>Lire du code pour identifier les flux de données personnelles</li>
+              <li>Rédiger registres de traitements, politiques de confidentialité, procédures de réponse aux droits</li>
+              <li>Implémenter des solutions techniques : bannières de consentement, modules de conformité WordPress, anonymisation de données</li>
+            </ul>
+          </div>
+
+          <div class="profile-block">
+            <div class="profile-block-title">Mon parcours</div>
+            <p class="profile-text" style="margin-top:0.3rem;">
+              Après un Master en Marketing (EM Strasbourg), une décennie d'expériences en gestion de projets, communication et coordination d'équipes, j'ai délibérément choisi d'acquérir les compétences techniques qui me manquaient. Mon CDA (M2I Formation, 2026) et mon stage chez DPP Strasbourg m'ont donné cette double casquette que les cabinets DPO et les équipes Privacy cherchent : comprendre <em>et</em> les métiers <em>et</em> les systèmes.
+            </p>
+          </div>
+
+          <div class="profile-block profile-block--accent">
+            <div class="profile-block-title">Ce que je recherche</div>
+            <p class="profile-text" style="margin-top:0.3rem;">
+              Un poste de <strong>Consultant DPO junior</strong>, <strong>Privacy Engineer junior</strong> ou <strong>Technicien conformité RGPD</strong> — de préférence à Strasbourg, dans le Grand Est ou au Luxembourg. Prêt à monter rapidement en compétences sur les référentiels (CNIL, EDPB, ISO 27701) et les outils métier (OneTrust, Didomi, DPO Board).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPÉRIENCES -->
+      <section class="section exp-section">
+        <h2 class="section-title">Expériences professionnelles</h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Développeur Web — Stage</span>
+            <span class="exp-date">2025 – 2026</span>
+          </div>
+          <div class="exp-company">DPP – Data Privacy Professionals, Strasbourg</div>
+          <div class="exp-context">Cabinet de DPO externalisé — contexte réel conformité RGPD multi-clients</div>
+          <ul class="exp-list">
+            <li>Développement d'un plugin WordPress de catalogue de formations (« DPP Formations »)</li>
+            <li>Intégration de composants conformité RGPD : bannière de consentement, mentions légales dynamiques</li>
+            <li>Résolution d'erreurs AMP et optimisation SEO technique sur le site du cabinet</li>
+            <li>Exposition aux pratiques DPO : registre des traitements, documentation clients, procédures droits des personnes</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Chef de Projet Événementiel</span>
+            <span class="exp-date">Juin – Nov. 2024</span>
+          </div>
+          <div class="exp-company">CfaN (Christ for All Nations), Aboisso, Côte d'Ivoire</div>
+          <ul class="exp-list">
+            <li>Coordination de 75 événements simultanés — 30 000 participants, budget 20 K€</li>
+            <li>Management d'équipes pluridisciplinaires, gestion logistique, sécurité et communication</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Employé Expert</span>
+            <span class="exp-date">2020 – 2023</span>
+          </div>
+          <div class="exp-company">Five Guys, Strasbourg</div>
+          <ul class="exp-list">
+            <li>Formation d'employés, gestion numérique des stocks, participation à l'ouverture</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Technicien Événementiel & Coordinateur</span>
+            <span class="exp-date">2018 – 2020</span>
+          </div>
+          <div class="exp-company">Comptoir des Makers / AV-Lab FabLab, Strasbourg</div>
+          <ul class="exp-list">
+            <li>Gestion administrative, coordination partenaires, événements technologiques</li>
+            <li>Initiation aux techniques de fabrication numérique et outils collaboratifs</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Web Marketeur</span>
+            <span class="exp-date">2016</span>
+          </div>
+          <div class="exp-company">Wine Scholar Guild, Labaroche</div>
+          <ul class="exp-list">
+            <li>Création de contenus web, webinaires, gestion campagnes digitales</li>
+            <li>Administration CRM, analyse données clients</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Chef de Projet Communication</span>
+            <span class="exp-date">2009 – 2010</span>
+          </div>
+          <div class="exp-company">Progressif Media, Strasbourg</div>
+          <ul class="exp-list">
+            <li>Gestion de projets web (10+ clients), maintenance WordPress</li>
+            <li>Stratégies SEO, analyse de performances digitales</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- PROJETS -->
+      <section class="section">
+        <h2 class="section-title">Projets</h2>
+
+        <div class="project-item">
+          <div class="project-name">TheCrossLove — Projet CDA fin de formation</div>
+          <div class="project-desc">Plateforme de gestion d'événements humanitaires (Symfony, PHP, MySQL, architecture MVC). Gestion des inscriptions, des équipes et des budgets. Projet de fin de formation RNCP.</div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-name">registre-traitements-app <span style="color:var(--accent);font-size:0.7rem;">[en cours]</span></div>
+          <div class="project-desc">Mini-application CRUD de gestion du registre des traitements (Article 30 RGPD) pour TPE/PME — PHP/MySQL, export CSV. github.com/Ehonam</div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-name">CV en ligne — ehonam.github.io/CV</div>
+          <div class="project-desc">CV interactif développé en HTML/CSS pur, hébergé sur GitHub Pages.</div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="cv-sidebar">
+
+      <!-- COMPÉTENCES RGPD -->
+      <section class="section">
+        <h3 class="section-title-sm">Privacy &amp; Conformité RGPD</h3>
+        <div class="skill-tags">
+          <span class="skill-tag accent">Registre des traitements</span>
+          <span class="skill-tag accent">AIPD / PIA</span>
+          <span class="skill-tag accent">Droits des personnes</span>
+          <span class="skill-tag accent">Consentement cookies (CNIL)</span>
+          <span class="skill-tag accent">Politique de confidentialité</span>
+          <span class="skill-tag accent">Sensibilisation RGPD</span>
+          <span class="skill-tag accent">Documentation DPO</span>
+        </div>
+      </section>
+
+      <!-- COMPÉTENCES TECH -->
+      <section class="section">
+        <h3 class="section-title-sm">Développement</h3>
+        <div class="skills-group">
+          <div class="skills-group-label">Langages</div>
+          <div class="skill-tags">
+            <span class="skill-tag primary">PHP</span>
+            <span class="skill-tag primary">SQL / MySQL</span>
+            <span class="skill-tag primary">JavaScript</span>
+            <span class="skill-tag primary">HTML / CSS</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skills-group-label">Outils & Frameworks</div>
+          <div class="skill-tags">
+            <span class="skill-tag">WordPress</span>
+            <span class="skill-tag">Symfony</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Scrum</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPÉTENCES TRANSVERSAL -->
+      <section class="section">
+        <h3 class="section-title-sm">Gestion de projet</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Pilotage de projets</span>
+          <span class="skill-tag">Analyse des risques</span>
+          <span class="skill-tag">Rédaction documentaire</span>
+          <span class="skill-tag">Relation clients</span>
+          <span class="skill-tag">Formation d'équipes</span>
+          <span class="skill-tag">Budget &amp; reporting</span>
+        </div>
+      </section>
+
+      <!-- FORMATION -->
+      <section class="section">
+        <h3 class="section-title-sm">Formation</h3>
+
+        <div class="edu-item">
+          <div class="edu-title">Concepteur Développeur d'Applications (CDA)</div>
+          <div class="edu-school">M2I Formation, Schiltigheim</div>
+          <div class="edu-date">2025 – 2026 · Titre RNCP Niveau 6 (Bac+3/4) · Niveau global Bac+5</div>
+          <div class="edu-note">Projet : TheCrossLove (Symfony)</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">Master 2 Marketing &amp; Gestion d'Événements</div>
+          <div class="edu-school">EM Strasbourg Business School</div>
+          <div class="edu-date">2015 – 2016</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">DUT Génie Mécanique</div>
+          <div class="edu-school">Université Lyon 1</div>
+          <div class="edu-date">2005 – 2006</div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="section">
+        <h3 class="section-title-sm">Certifications &amp; Formations</h3>
+        <div class="certif-item">
+          <div class="certif-dot"></div>
+          <div>MOOC RGPD — CNIL (en cours)</div>
+        </div>
+        <div class="certif-item">
+          <div class="certif-dot"></div>
+          <div>Expérience terrain DPO externalisé — DPP Strasbourg</div>
+        </div>
+      </section>
+
+      <!-- LANGUES -->
+      <section class="section">
+        <h3 class="section-title-sm">Langues</h3>
+
+        <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;margin-bottom:0.75rem;">
+          <div style="display:flex;justify-content:space-between;width:100%;">
+            <span class="lang-name">Français</span>
+            <span class="lang-level">Langue maternelle</span>
+          </div>
+          <div class="lang-bar">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+          </div>
+        </div>
+
+        <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;margin-bottom:0.75rem;">
+          <div style="display:flex;justify-content:space-between;width:100%;">
+            <span class="lang-name">Anglais</span>
+            <span class="lang-level">Courant · B2</span>
+          </div>
+          <div class="lang-bar">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div>
+          </div>
+        </div>
+
+        <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;margin-bottom:0.75rem;">
+          <div style="display:flex;justify-content:space-between;width:100%;">
+            <span class="lang-name">Allemand</span>
+            <span class="lang-level">Notions</span>
+          </div>
+          <div class="lang-bar">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div><div class="lang-dot"></div><div class="lang-dot"></div>
+          </div>
+        </div>
+
+        <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;">
+          <div style="display:flex;justify-content:space-between;width:100%;">
+            <span class="lang-name">Éwé</span>
+            <span class="lang-level">Langue maternelle</span>
+          </div>
+          <div class="lang-bar">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+          </div>
+        </div>
+      </section>
+
+    </aside>
+  </div><!-- /cv-body -->
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="cv-footer">
+    © 2026 Koffi Ehonam Hamenou &nbsp;·&nbsp;
+    <a href="https://ehonam.github.io/CV/">ehonam.github.io/CV</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Ehonam">github.com/Ehonam</a>
+  </footer>
+
+</div><!-- /cv-wrapper -->
 </body>
-
 </html>
