@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -26,10 +25,8 @@
       --muted:   #8a9db5;
       --border:  #d4c9b5;
       --white:   #ffffff;
-
       --serif:   'Playfair Display', Georgia, serif;
       --sans:    'DM Sans', system-ui, sans-serif;
-
       --gap:     1.5rem;
       --radius:  4px;
     }
@@ -46,7 +43,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Page Layout ── */
     .cv-wrapper {
       max-width: 960px;
       margin: 0 auto;
@@ -54,7 +50,6 @@
       box-shadow: 0 0 60px rgba(13,27,42,0.12);
     }
 
-    /* ── Header ── */
     .cv-header {
       background: var(--navy);
       color: var(--white);
@@ -91,8 +86,7 @@
     }
 
     .header-photo img {
-      width: 100px;
-      height: 100px;
+      width: 100px; height: 100px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
@@ -113,7 +107,6 @@
     }
 
     .header-left .tagline {
-      font-size: 1rem;
       font-weight: 500;
       color: var(--accent2);
       letter-spacing: 0.5px;
@@ -147,11 +140,7 @@
 
     .contact-grid a:hover { color: var(--accent2); }
 
-    .contact-grid .icon {
-      width: 14px; height: 14px;
-      opacity: 0.6;
-      flex-shrink: 0;
-    }
+    .contact-grid .icon { width: 14px; height: 14px; opacity: 0.6; flex-shrink: 0; }
 
     .header-badge {
       background: rgba(200,151,58,0.15);
@@ -179,12 +168,7 @@
       font-weight: 700;
     }
 
-    .lang-pills {
-      display: flex;
-      gap: 0.4rem;
-      margin-top: 0.6rem;
-      justify-content: center;
-    }
+    .lang-pills { display: flex; gap: 0.4rem; margin-top: 0.6rem; justify-content: center; }
 
     .lang-pill {
       background: rgba(255,255,255,0.1);
@@ -195,25 +179,15 @@
       color: rgba(255,255,255,0.8);
     }
 
-    /* ── Body layout ── */
-    .cv-body {
-      display: grid;
-      grid-template-columns: 1fr 280px;
-    }
+    .cv-body { display: grid; grid-template-columns: 1fr 280px; }
 
-    /* ── Main Column ── */
     .cv-main {
       padding: 2.5rem 2.5rem 2.5rem 3rem;
       border-right: 1px solid var(--border);
     }
 
-    /* ── Sidebar ── */
-    .cv-sidebar {
-      padding: 2.5rem 1.8rem;
-      background: var(--light);
-    }
+    .cv-sidebar { padding: 2.5rem 1.8rem; background: var(--light); }
 
-    /* ── Section Headers ── */
     .section { margin-bottom: 2.2rem; }
 
     .section-title {
@@ -240,25 +214,10 @@
       margin-bottom: 1rem;
     }
 
-    /* ── Profile ── */
-    .profile-text {
-      font-size: 0.88rem;
-      line-height: 1.75;
-      color: var(--steel);
-    }
+    .profile-text { font-size: 0.88rem; line-height: 1.75; color: var(--steel); }
+    .profile-text strong { color: var(--navy); font-weight: 600; }
 
-    .profile-text strong {
-      color: var(--navy);
-      font-weight: 600;
-    }
-
-    /* ── Profile blocks ── */
-    .profile-blocks {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
+    .profile-blocks { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.85rem; }
 
     .profile-block {
       border-left: 3px solid var(--border);
@@ -281,11 +240,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .profile-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .profile-list { list-style: none; padding: 0; margin: 0; }
 
     .profile-list li {
       font-size: 0.85rem;
@@ -296,15 +251,8 @@
       line-height: 1.55;
     }
 
-    .profile-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.75rem;
-    }
+    .profile-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
 
-    /* ── Experience ── */
     .exp-item {
       margin-bottom: 1.6rem;
       padding-bottom: 1.6rem;
@@ -312,17 +260,12 @@
       position: relative;
     }
 
-    .exp-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
     .exp-item::before {
       content: '';
       position: absolute;
-      left: -2.5rem;
-      top: 0.45rem;
+      left: -2.5rem; top: 0.45rem;
       width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--accent);
@@ -339,37 +282,12 @@
       flex-wrap: wrap;
     }
 
-    .exp-title {
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--navy);
-    }
+    .exp-title { font-weight: 600; font-size: 0.92rem; color: var(--navy); }
+    .exp-date { font-size: 0.75rem; color: var(--muted); white-space: nowrap; font-style: italic; }
+    .exp-company { font-size: 0.82rem; color: var(--accent); font-weight: 500; margin-bottom: 0.2rem; }
+    .exp-context { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 0.5rem; }
 
-    .exp-date {
-      font-size: 0.75rem;
-      color: var(--muted);
-      white-space: nowrap;
-      font-style: italic;
-    }
-
-    .exp-company {
-      font-size: 0.82rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-
-    .exp-context {
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 0.5rem;
-    }
-
-    .exp-list {
-      list-style: none;
-      padding: 0;
-    }
+    .exp-list { list-style: none; padding: 0; }
 
     .exp-list li {
       font-size: 0.82rem;
@@ -380,22 +298,14 @@
       line-height: 1.5;
     }
 
-    .exp-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.75rem;
-    }
+    .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
 
-    /* ── Timeline bar for experience section ── */
     .cv-main .section.exp-section {
       padding-left: 1.5rem;
       border-left: 1px solid var(--border);
       margin-left: 0.5rem;
     }
 
-    /* ── Skills ── */
     .skills-group { margin-bottom: 1.2rem; }
 
     .skills-group-label {
@@ -407,11 +317,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 
     .skill-tag {
       background: var(--white);
@@ -423,49 +329,15 @@
       font-weight: 500;
     }
 
-    .skill-tag.primary {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: var(--white);
-    }
+    .skill-tag.primary { background: var(--navy); border-color: var(--navy); color: var(--white); }
+    .skill-tag.accent { background: rgba(200,151,58,0.12); border-color: rgba(200,151,58,0.4); color: var(--navy); }
 
-    .skill-tag.accent {
-      background: rgba(200,151,58,0.12);
-      border-color: rgba(200,151,58,0.4);
-      color: var(--navy);
-    }
+    .edu-item { margin-bottom: 1.1rem; }
+    .edu-title { font-weight: 600; font-size: 0.85rem; color: var(--navy); line-height: 1.4; }
+    .edu-school { font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+    .edu-date { font-size: 0.73rem; color: var(--muted); font-style: italic; }
+    .edu-note { font-size: 0.75rem; color: var(--steel); margin-top: 0.2rem; }
 
-    /* ── Formation ── */
-    .edu-item {
-      margin-bottom: 1.1rem;
-    }
-
-    .edu-title {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--navy);
-      line-height: 1.4;
-    }
-
-    .edu-school {
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .edu-date {
-      font-size: 0.73rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    .edu-note {
-      font-size: 0.75rem;
-      color: var(--steel);
-      margin-top: 0.2rem;
-    }
-
-    /* ── Projects ── */
     .project-item {
       background: var(--white);
       border: 1px solid var(--border);
@@ -475,70 +347,19 @@
       margin-bottom: 0.7rem;
     }
 
-    .project-name {
-      font-family: 'Courier New', monospace;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.15rem;
-    }
+    .project-name { font-family: 'Courier New', monospace; font-size: 0.78rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem; }
+    .project-desc { font-size: 0.75rem; color: var(--steel); line-height: 1.45; }
 
-    .project-desc {
-      font-size: 0.75rem;
-      color: var(--steel);
-      line-height: 1.45;
-    }
+    .certif-item { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.6rem; font-size: 0.78rem; color: var(--steel); }
+    .certif-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.45rem; }
 
-    /* ── Certifs / Badges ── */
-    .certif-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.78rem;
-      color: var(--steel);
-    }
-
-    .certif-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.45rem;
-    }
-
-    /* ── Langues ── */
-    .lang-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.6rem;
-      font-size: 0.8rem;
-    }
-
+    .lang-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; font-size: 0.8rem; }
     .lang-name { color: var(--navy); font-weight: 500; }
-
-    .lang-level {
-      font-size: 0.7rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    .lang-bar {
-      display: flex;
-      gap: 3px;
-      margin-top: 3px;
-    }
-
-    .lang-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--border);
-    }
-
+    .lang-level { font-size: 0.7rem; color: var(--muted); font-style: italic; }
+    .lang-bar { display: flex; gap: 3px; margin-top: 3px; }
+    .lang-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
     .lang-dot.filled { background: var(--accent); }
 
-    /* ── Footer ── */
     .cv-footer {
       background: var(--navy);
       color: rgba(255,255,255,0.45);
@@ -548,12 +369,8 @@
       letter-spacing: 0.3px;
     }
 
-    .cv-footer a {
-      color: var(--accent2);
-      text-decoration: none;
-    }
+    .cv-footer a { color: var(--accent2); text-decoration: none; }
 
-    /* ── Print ── */
     @media print {
       body { background: white; font-size: 12px; }
       .cv-wrapper { box-shadow: none; max-width: 100%; }
@@ -563,7 +380,6 @@
       .cv-sidebar { padding: 1.5rem; }
     }
 
-    /* ── Responsive ── */
     @media (max-width: 700px) {
       .cv-body { grid-template-columns: 1fr; }
       .cv-sidebar { border-top: 1px solid var(--border); }
@@ -578,14 +394,10 @@
       .cv-main .section.exp-section { padding-left: 1rem; }
     }
 
-    /* ── Animations (screen only) ── */
     @media screen {
-      .cv-header, .cv-main, .cv-sidebar {
-        animation: fadeIn 0.5s ease both;
-      }
+      .cv-header, .cv-main, .cv-sidebar { animation: fadeIn 0.5s ease both; }
       .cv-main { animation-delay: 0.1s; }
       .cv-sidebar { animation-delay: 0.2s; }
-
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(12px); }
         to   { opacity: 1; transform: translateY(0); }
@@ -597,7 +409,6 @@
 
 <div class="cv-wrapper">
 
-  <!-- ═══ HEADER ═══ -->
   <header class="cv-header">
     <div class="header-inner">
       <div class="header-photo">
@@ -606,8 +417,7 @@
       <div class="header-left">
         <div class="tagline">Consultant DPO Junior &amp; Privacy Engineer · CDA RNCP · Stage cabinet DPO · PHP · WordPress · SQL</div>
         <h1>Koffi Ehonam<br>Hamenou</h1>
-        <div class="location">📍 Strasbourg, France &nbsp;·&nbsp; Grand Est &nbsp;·&nbsp; Luxembourg</div>
-
+        <div class="location"> Strasbourg, France &nbsp;·&nbsp; Grand Est &nbsp;·&nbsp; Luxembourg</div>
         <div class="contact-grid">
           <a href="tel:+33641154337">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.0 1.19 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
@@ -631,7 +441,6 @@
           </span>
         </div>
       </div>
-
       <div class="header-badge">
         <span class="badge-label">Titre RNCP</span>
         <div class="badge-value">Master 2<br>Bac+5</div>
@@ -648,10 +457,7 @@
     </div>
   </header>
 
-  <!-- ═══ BODY ═══ -->
   <div class="cv-body">
-
-    <!-- ── MAIN COLUMN ── -->
     <main class="cv-main">
 
       <!-- PROFIL -->
@@ -660,7 +466,6 @@
         <p class="profile-text">
           J'ai le profil qui combine une <strong>expertise technique</strong> (titre CDA RNCP + Master 2, niveau Bac+5) et une expérience concrète dans un <strong>cabinet DPO externalisé</strong> — avec, en arrière-plan, plus de <strong>10 ans de gestion de projets complexes</strong> dans des contextes exigeants (marketing, événementiel, équipes internationales).
         </p>
-
         <div class="profile-blocks">
           <div class="profile-block">
             <div class="profile-block-title">Ce que je fais concrètement</div>
@@ -671,14 +476,12 @@
               <li>Implémenter des solutions techniques : bannières de consentement, modules de conformité WordPress, anonymisation de données</li>
             </ul>
           </div>
-
           <div class="profile-block">
             <div class="profile-block-title">Mon parcours</div>
             <p class="profile-text" style="margin-top:0.3rem;">
               Après un Master en Marketing (EM Strasbourg), une décennie d'expériences en gestion de projets, communication et coordination d'équipes, j'ai délibérément choisi d'acquérir les compétences techniques qui me manquaient. Mon CDA (M2I Formation, 2026) et mon stage chez DPP Strasbourg m'ont donné cette double casquette que les cabinets DPO et les équipes Privacy cherchent : comprendre <em>et</em> les métiers <em>et</em> les systèmes.
             </p>
           </div>
-
           <div class="profile-block profile-block--accent">
             <div class="profile-block-title">Ce que je recherche</div>
             <p class="profile-text" style="margin-top:0.3rem;">
@@ -691,6 +494,21 @@
       <!-- EXPÉRIENCES -->
       <section class="section exp-section">
         <h2 class="section-title">Expériences professionnelles</h2>
+
+        <!-- ADAGIO — nouveau poste en tête -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Réceptionniste de nuit</span>
+            <span class="exp-date">2025 – présent</span>
+          </div>
+          <div class="exp-company">Adagio Aparthotel Petite France, Strasbourg</div>
+          <div class="exp-context">Établissement 4★ — gestion quotidienne de données personnelles clients</div>
+          <ul class="exp-list">
+            <li>Traitement de données sensibles : identité, paiements, séjour — dans le respect des procédures de confidentialité</li>
+            <li>Exposition pratique aux flux de données hôteliers : transmission aux OTA (Booking.com, Expedia), interfaces PMS</li>
+            <li>Application concrète des principes RGPD : conservation limitée, accès restreint, gestion des demandes clients</li>
+          </ul>
+        </div>
 
         <div class="exp-item">
           <div class="exp-header">
@@ -732,7 +550,7 @@
 
         <div class="exp-item">
           <div class="exp-header">
-            <span class="exp-title">Technicien Événementiel & Coordinateur</span>
+            <span class="exp-title">Technicien Événementiel &amp; Coordinateur</span>
             <span class="exp-date">2018 – 2020</span>
           </div>
           <div class="exp-company">Comptoir des Makers / AV-Lab FabLab, Strasbourg</div>
@@ -771,30 +589,25 @@
       <!-- PROJETS -->
       <section class="section">
         <h2 class="section-title">Projets</h2>
-
         <div class="project-item">
           <div class="project-name">TheCrossLove — Projet CDA fin de formation</div>
           <div class="project-desc">Plateforme de gestion d'événements humanitaires (Symfony, PHP, MySQL, architecture MVC). Gestion des inscriptions, des équipes et des budgets. Projet de fin de formation RNCP.</div>
         </div>
-
         <div class="project-item">
           <div class="project-name">registre-traitements-app <span style="color:var(--accent);font-size:0.7rem;">[en cours]</span></div>
           <div class="project-desc">Mini-application CRUD de gestion du registre des traitements (Article 30 RGPD) pour TPE/PME — PHP/MySQL, export CSV. github.com/Ehonam</div>
         </div>
-
         <div class="project-item">
           <div class="project-name">CV en ligne — ehonam.github.io/CV</div>
           <div class="project-desc">CV interactif développé en HTML/CSS pur, hébergé sur GitHub Pages.</div>
         </div>
-
       </section>
 
     </main>
 
-    <!-- ── SIDEBAR ── -->
+    <!-- SIDEBAR -->
     <aside class="cv-sidebar">
 
-      <!-- COMPÉTENCES RGPD -->
       <section class="section">
         <h3 class="section-title-sm">Privacy &amp; Conformité RGPD</h3>
         <div class="skill-tags">
@@ -808,7 +621,6 @@
         </div>
       </section>
 
-      <!-- COMPÉTENCES TECH -->
       <section class="section">
         <h3 class="section-title-sm">Développement</h3>
         <div class="skills-group">
@@ -821,7 +633,7 @@
           </div>
         </div>
         <div class="skills-group">
-          <div class="skills-group-label">Outils & Frameworks</div>
+          <div class="skills-group-label">Outils &amp; Frameworks</div>
           <div class="skill-tags">
             <span class="skill-tag">WordPress</span>
             <span class="skill-tag">Symfony</span>
@@ -831,7 +643,6 @@
         </div>
       </section>
 
-      <!-- COMPÉTENCES TRANSVERSAL -->
       <section class="section">
         <h3 class="section-title-sm">Gestion de projet</h3>
         <div class="skill-tags">
@@ -844,23 +655,19 @@
         </div>
       </section>
 
-      <!-- FORMATION -->
       <section class="section">
         <h3 class="section-title-sm">Formation</h3>
-
         <div class="edu-item">
           <div class="edu-title">Concepteur Développeur d'Applications (CDA)</div>
           <div class="edu-school">M2I Formation, Schiltigheim</div>
           <div class="edu-date">2025 – 2026 · Titre RNCP Niveau 6 (Bac+3/4) · Niveau global Bac+5</div>
           <div class="edu-note">Projet : TheCrossLove (Symfony)</div>
         </div>
-
         <div class="edu-item">
           <div class="edu-title">Master 2 Marketing &amp; Gestion d'Événements</div>
           <div class="edu-school">EM Strasbourg Business School</div>
           <div class="edu-date">2015 – 2016</div>
         </div>
-
         <div class="edu-item">
           <div class="edu-title">DUT Génie Mécanique</div>
           <div class="edu-school">Université Lyon 1</div>
@@ -868,7 +675,6 @@
         </div>
       </section>
 
-      <!-- CERTIFICATIONS -->
       <section class="section">
         <h3 class="section-title-sm">Certifications &amp; Formations</h3>
         <div class="certif-item">
@@ -881,10 +687,8 @@
         </div>
       </section>
 
-      <!-- LANGUES -->
       <section class="section">
         <h3 class="section-title-sm">Langues</h3>
-
         <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;margin-bottom:0.75rem;">
           <div style="display:flex;justify-content:space-between;width:100%;">
             <span class="lang-name">Français</span>
@@ -894,7 +698,6 @@
             <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
           </div>
         </div>
-
         <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;margin-bottom:0.75rem;">
           <div style="display:flex;justify-content:space-between;width:100%;">
             <span class="lang-name">Anglais</span>
@@ -904,7 +707,6 @@
             <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div>
           </div>
         </div>
-
         <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;margin-bottom:0.75rem;">
           <div style="display:flex;justify-content:space-between;width:100%;">
             <span class="lang-name">Allemand</span>
@@ -914,7 +716,6 @@
             <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div><div class="lang-dot"></div><div class="lang-dot"></div>
           </div>
         </div>
-
         <div class="lang-item" style="flex-direction:column;align-items:flex-start;gap:3px;">
           <div style="display:flex;justify-content:space-between;width:100%;">
             <span class="lang-name">Éwé</span>
@@ -927,9 +728,8 @@
       </section>
 
     </aside>
-  </div><!-- /cv-body -->
+  </div>
 
-  <!-- ═══ FOOTER ═══ -->
   <footer class="cv-footer">
     © 2026 Koffi Ehonam Hamenou &nbsp;·&nbsp;
     <a href="https://ehonam.github.io/CV/">ehonam.github.io/CV</a>
@@ -937,6 +737,6 @@
     <a href="https://github.com/Ehonam">github.com/Ehonam</a>
   </footer>
 
-</div><!-- /cv-wrapper -->
+</div>
 </body>
 </html>
