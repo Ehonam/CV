@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Koffi Ehonam Hamenou — Junior GDPR Consultant & Privacy Engineer in Strasbourg, France. Code-level compliance audits, records of processing, PHP/Symfony/WordPress.">
+<title>Koffi Ehonam Hamenou — Junior GDPR Consultant & Privacy Engineer</title>
+<style>
+  :root{
+    --navy:#1b2a4a; --accent:#2e5eaa; --accent-light:#eaf1fb;
+    --ink:#22272e; --grey:#5b6470; --line:#d8dee7; --bg:#f4f6f9; --card:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px}
+  .page{max-width:880px;margin:0 auto;background:var(--card);box-shadow:0 2px 18px rgba(27,42,74,.12)}
+
+  header{background:var(--navy);color:#fff;padding:44px 48px 36px;text-align:center}
+  .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #a9c4ef;margin-bottom:14px}
+  header h1{font-size:2rem;letter-spacing:.06em;text-transform:uppercase}
+  header .role{color:#a9c4ef;font-size:1.15rem;font-weight:600;margin-top:6px}
+  header .tagline{color:#cdd6e5;font-style:italic;margin-top:10px}
+  .contact{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font-size:.9rem;color:#cdd6e5}
+  .contact a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+  .contact a:hover{border-bottom-color:#fff}
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:18px 48px;background:var(--accent-light);border-bottom:1px solid var(--line)}
+  .tags span{background:#fff;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:3px 14px;font-size:.82rem;font-weight:600}
+
+  main{padding:34px 48px 44px}
+  section{margin-bottom:30px}
+  h2{color:var(--navy);font-size:1.02rem;text-transform:uppercase;letter-spacing:.09em;border-bottom:2px solid var(--accent);padding-bottom:6px;margin-bottom:14px}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+  .skill h3{font-size:.92rem;color:var(--accent);margin-bottom:4px}
+  .skill p{font-size:.92rem;color:var(--ink)}
+
+  .job{margin-bottom:18px}
+  .job-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+  .job-head h3{font-size:1rem;color:var(--navy)}
+  .job-head .when{font-size:.85rem;color:var(--grey);font-style:italic;white-space:nowrap}
+  ul{list-style:none;margin-top:6px}
+  ul li{padding-left:18px;position:relative;font-size:.93rem;margin-bottom:4px}
+  ul li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+
+  .langs{display:flex;flex-wrap:wrap;gap:10px}
+  .langs div{background:var(--accent-light);border-radius:8px;padding:8px 16px;font-size:.9rem}
+  .langs b{color:var(--navy)}
+
+  .projects .job p{font-size:.93rem;margin-top:2px}
+  a{color:var(--accent)}
+
+  footer{background:var(--navy);color:#cdd6e5;text-align:center;padding:16px;font-size:.85rem}
+  footer a{color:#fff}
+
+  @media(max-width:640px){
+    header,main{padding-left:22px;padding-right:22px}
+    .cols{grid-template-columns:1fr}
+    .job-head{flex-direction:column;gap:0}
+  }
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:#fff;font-size:10px;line-height:1.28}
+    .page{box-shadow:none;max-width:none}
+    header{padding:14px 26px 12px}
+    .avatar{width:64px;height:64px;margin-bottom:6px}
+    header h1{font-size:1.35rem}
+    header .role{font-size:.95rem;margin-top:2px}
+    header .tagline{margin-top:4px;font-size:.8rem}
+    .contact{margin-top:8px;font-size:.72rem;gap:4px 12px}
+    .tags{padding:6px 26px;gap:5px}
+    .tags span{padding:1px 9px;font-size:.66rem}
+    main{padding:10px 26px 10px}
+    section{margin-bottom:7px}
+    h2{font-size:.78rem;padding-bottom:2px;margin-bottom:5px;margin-top:0}
+    h2[style]{margin-top:10px!important}
+    .cols{gap:6px 18px}
+    .skill h3{font-size:.75rem;margin-bottom:1px}
+    .skill p,.job-head .when{font-size:.72rem}
+    .job{margin-bottom:6px;break-inside:avoid}
+    .job-head h3{font-size:.78rem}
+    ul{margin-top:1px}
+    ul li{font-size:.71rem;margin-bottom:1px;padding-left:12px}
+    .langs{gap:6px}
+    .langs div{padding:2px 9px;font-size:.72rem}
+    .projects .job p{font-size:.74rem}
+    footer{display:none}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <img src="photo.jpeg" alt="Photo of Koffi Ehonam Hamenou" class="avatar"
+       onerror="this.style.display='none'">
+  <h1>Koffi Ehonam Hamenou</h1>
+  <p class="role">Junior GDPR Consultant · Privacy Engineer</p>
+  <p class="tagline">Compliance audited where it actually lives: in the code.</p>
+  <div class="contact">
+    <a href="mailto:ehonam.hamenou@gmail.com">ehonam.hamenou@gmail.com</a>
+    <span>+33 6 41 15 43 37</span>
+    <span>Strasbourg, France — Grand Est · Luxembourg · Geneva · remote</span>
+    <span>Driving licence</span>
+    <a href="https://www.linkedin.com/in/koffi-hamenou-20224a106" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Ehonam" target="_blank" rel="noopener">GitHub</a>
+    <a href="./">🇫🇷 Version française</a>
+  </div>
+</header>
+
+<div class="tags">
+  <span>DPO · Data Protection Officer</span><span>GDPR / RGPD</span><span>Compliance audit</span>
+  <span>RoPA — Art. 30</span><span>DPIA</span><span>PHP · Symfony</span><span>WordPress</span>
+  <span>Privacy by design</span><span>Zimbabwe CDPA</span>
+</div>
+
+<main>
+
+<section>
+  <h2>Professional profile</h2>
+  <p>Certified software developer (French professional title, RNCP Level 6 — EQF 6 / Bachelor level,
+  obtained February 2026) trained in GDPR compliance at a DPO firm (Data Privacy Professionals,
+  Strasbourg). Hybrid profile: I audit a website or application <strong>in its code</strong> — data
+  flows, consent, retention periods — and build the fixes myself. Backed by 10 years of
+  multi-stakeholder project management: I speak both developer and boardroom.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="cols">
+    <div class="skill">
+      <h3>Privacy &amp; compliance</h3>
+      <p>GDPR audits of websites and applications (code-level analysis) · Records of processing
+      activities (Art. 30) · DPIA (CNIL methodology) · Privacy policies · Data subject rights ·
+      Consent management: Axeptio, Cookiebot, tarteaucitron · Staff training</p>
+    </div>
+    <div class="skill">
+      <h3>Development</h3>
+      <p>PHP · Symfony · WordPress (plugins, themes, AMP) · MySQL/SQL · JavaScript · HTML/CSS ·
+      Git · Scrum · Docker (basics)</p>
+    </div>
+    <div class="skill">
+      <h3>Regulatory frameworks &amp; transversal</h3>
+      <p>GDPR / CNIL (hands-on practice in a DPO firm) · Zimbabwe Cyber and Data Protection Act
+      (ongoing engagement) · 10 years of project management · Budgets up to €20k · Executive reporting</p>
+    </div>
+    <div class="skill">
+      <h3>Languages</h3>
+      <div class="langs">
+        <div><b>French</b> native</div>
+        <div><b>English</b> B2</div>
+        <div><b>Ewe</b> native</div>
+        <div><b>German</b> basics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Compliance &amp; development experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <h3>GDPR Consultant &amp; Developer (internship) — Data Privacy Professionals, external DPO firm</h3>
+      <span class="when">Strasbourg · Oct 2025 – Jan 2026</span>
+    </div>
+    <ul>
+      <li>Shipped the "DPP Formations" WordPress plugin to production in 3 months (10 training courses managed, used daily by the firm since Dec 2025) — built solo, from specification to board presentation</li>
+      <li>Detected 2 undeclared data collections on audited websites by analysing PHP source code and MySQL databases — findings integrated into client deliverables</li>
+      <li>Documented a record of processing activities (Art. 30) and co-drafted a privacy policy under DPO supervision</li>
+      <li>Eliminated 100% of AMP errors on the firm's website, restoring its Google indexing</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <h3>Independent GDPR Consultant — first international engagement (own practice)</h3>
+      <span class="when">Remote · 2026 – present</span>
+    </div>
+    <ul>
+      <li>Technical audit and WordPress training for a law firm (Zimbabwe): SSL certificate, professional email, Cyber and Data Protection Act compliance</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top:26px">Other experience — project management &amp; sensitive data</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <h3>Event Project Manager — CfaN (Christ for all Nations)</h3>
+      <span class="when">Aboisso, Côte d'Ivoire · Jun – Nov 2024</span>
+    </div>
+    <ul>
+      <li>Delivered 75 events gathering 20,000 participants in 6 months, managing a €20k budget and multinational teams — a 20,000-person database collected, secured and processed</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <h3>Night Receptionist (part-time) — Aparthotel Adagio Petite France</h3>
+      <span class="when">Strasbourg · Oct 2025 – Jul 2026</span>
+    </div>
+    <ul>
+      <li>Safeguarded, solo, the data of ~100 guests per night (identity, payment) in the GDPR-regulated OPERA PMS — daily practice of the rules I draft by day</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="job">
+    <div class="job-head">
+      <h3>Professional title: Application Designer &amp; Developer (CDA) — RNCP Level 6 · M2i Formation</h3>
+      <span class="when">Obtained February 2026</span>
+    </div>
+    <ul>
+      <li>Capstone project: TheCrossLove — Symfony platform for humanitarian event management, built privacy-by-design (data minimisation, retention periods, data subject rights)</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head">
+      <h3>"Atelier RGPD" MOOC — CNIL (French Data Protection Authority)</h3>
+      <span class="when">Certificate · July 2026</span>
+    </div>
+  </div>
+  <div class="job">
+    <div class="job-head">
+      <h3>Master's in Marketing &amp; Event Management — EM Strasbourg Business School</h3>
+      <span class="when">2016</span>
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <h2>Projects — <a href="https://github.com/Ehonam" target="_blank" rel="noopener">github.com/Ehonam</a></h2>
+  <div class="job">
+    <h3 style="color:var(--navy);font-size:1rem">Records of processing activities (PHP/MySQL)</h3>
+    <p>Open-source Art. 30 register tool, exports in the CNIL template format.</p>
+  </div>
+  <div class="job">
+    <h3 style="color:var(--navy);font-size:1rem">TheCrossLove (Symfony)</h3>
+    <p>Humanitarian event management platform built privacy-by-design — CDA capstone project.</p>
+  </div>
+  <div class="job">
+    <h3 style="color:var(--navy);font-size:1rem">"DPP Formations" WordPress plugin</h3>
+    <p>Training catalogue built at a DPO firm, in production.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Koffi Ehonam Hamenou · <a href="mailto:ehonam.hamenou@gmail.com">ehonam.hamenou@gmail.com</a> · Strasbourg, France · <a href="./">Version française</a>
+</footer>
+
+</div>
+</body>
+</html>
