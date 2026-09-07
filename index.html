@@ -59,7 +59,7 @@
   }
   @media print{
     @page{size:A4;margin:0}
-    body{background:#fff;font-size:10.5px;line-height:1.35}
+    body{background:#fff;font-size:10px;line-height:1.28}
     .page{box-shadow:none;max-width:none}
     header{padding:14px 26px 12px}
     .avatar{width:64px;height:64px;margin-bottom:6px}
@@ -69,16 +69,17 @@
     .contact{margin-top:8px;font-size:.72rem;gap:4px 12px}
     .tags{padding:6px 26px;gap:5px}
     .tags span{padding:1px 9px;font-size:.66rem}
-    main{padding:12px 26px 14px}
-    section{margin-bottom:10px}
-    h2{font-size:.8rem;padding-bottom:3px;margin-bottom:7px}
+    main{padding:10px 26px 10px}
+    section{margin-bottom:7px}
+    h2{font-size:.78rem;padding-bottom:2px;margin-bottom:5px;margin-top:0}
+    h2[style]{margin-top:10px!important}
     .cols{gap:6px 18px}
     .skill h3{font-size:.75rem;margin-bottom:1px}
     .skill p,.job-head .when{font-size:.72rem}
-    .job{margin-bottom:8px;break-inside:avoid}
-    .job-head h3{font-size:.8rem}
-    ul{margin-top:2px}
-    ul li{font-size:.74rem;margin-bottom:1px;padding-left:13px}
+    .job{margin-bottom:6px;break-inside:avoid}
+    .job-head h3{font-size:.78rem}
+    ul{margin-top:1px}
+    ul li{font-size:.71rem;margin-bottom:1px;padding-left:12px}
     .langs{gap:6px}
     .langs div{padding:2px 9px;font-size:.72rem}
     .projects .job p{font-size:.74rem}
@@ -107,8 +108,9 @@
 </header>
 
 <div class="tags">
-  <span>RGPD / CNIL</span><span>Audit de conformité</span><span>Registre art. 30</span>
-  <span>AIPD / DPIA</span><span>PHP · Symfony</span><span>WordPress</span><span>Privacy by design</span>
+  <span>DPO · Délégué à la protection des données</span><span>RGPD / CNIL</span><span>GDPR · Data Protection</span>
+  <span>Audit de conformité</span><span>Registre art. 30</span><span>AIPD / DPIA</span>
+  <span>PHP · Symfony</span><span>WordPress</span><span>Privacy by design</span><span>CDPA Zimbabwe</span>
 </div>
 
 <main>
@@ -154,50 +156,50 @@
 </section>
 
 <section>
-  <h2>Expériences professionnelles</h2>
+  <h2>Expérience conformité &amp; développement</h2>
 
   <div class="job">
     <div class="job-head">
       <h3>Consultant RGPD &amp; Développeur (stage) — Data Privacy Professionals, cabinet DPO externalisé</h3>
-      <span class="when">Strasbourg · 2025 – 2026</span>
+      <span class="when">Strasbourg · oct. 2025 – janv. 2026</span>
     </div>
     <ul>
-      <li>Conception et développement du plugin WordPress « DPP Formations », de la spécification à la mise en production — livrable présenté à la direction (déc. 2025)</li>
-      <li>Intégration d'outils de conformité RGPD dans WordPress : consentement, traçabilité, durées de conservation</li>
-      <li>Analyse de code orientée protection des données : identification des flux de données personnelles et des collectes non déclarées</li>
-      <li>Contribution aux livrables du cabinet : registre des traitements, politiques de confidentialité</li>
+      <li>Mis en production en 3 mois le plugin WordPress « DPP Formations » (10 formations gérées, utilisé quotidiennement par le cabinet depuis déc. 2025), développé seul, de la spécification à la présentation en direction</li>
+      <li>Détecté 2 collectes de données non déclarées sur des sites audités, en analysant le code source PHP et les bases MySQL — constats intégrés aux livrables clients</li>
+      <li>Documenté un registre des traitements (art. 30) et co-rédigé une politique de confidentialité sous supervision du DPO</li>
+      <li>Éliminé 100 % des erreurs AMP du site du cabinet, restaurant son indexation Google</li>
     </ul>
   </div>
+
+  <div class="job">
+    <div class="job-head">
+      <h3>Consultant RGPD indépendant — première mission internationale (micro-entreprise)</h3>
+      <span class="when">À distance · 2026 – aujourd'hui</span>
+    </div>
+    <ul>
+      <li>Audit technique et formation WordPress pour un cabinet d'avocats (Zimbabwe) : certificat SSL, messagerie professionnelle, conformité Cyber and Data Protection Act</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top:26px">Autres expériences — gestion de projet &amp; données sensibles</h2>
 
   <div class="job">
     <div class="job-head">
       <h3>Chef de projet événementiel — CfaN (Christ for all Nations)</h3>
-      <span class="when">Aboisso, Côte d'Ivoire · 2024</span>
+      <span class="when">Aboisso, Côte d'Ivoire · juin – nov. 2024</span>
     </div>
     <ul>
-      <li>Pilotage de 75 événements pour 30 000 participants — planification, logistique, coordination 24/7</li>
-      <li>Gestion du fichier des 30 000 inscrits : collecte, sécurisation et conservation de données personnelles à grande échelle · budget 20 k€ · équipes multinationales</li>
+      <li>Livré 75 événements réunissant 20 000 participants en 6 mois, en pilotant 20 k€ de budget et des équipes multinationales — soit un fichier de 20 000 personnes collecté, sécurisé et exploité</li>
     </ul>
   </div>
 
   <div class="job">
     <div class="job-head">
-      <h3>Réceptionniste de nuit (temps partiel, en parallèle de la reconversion) — Aparthotel Adagio Petite France</h3>
-      <span class="when">Strasbourg · 2024 – aujourd'hui</span>
+      <h3>Réceptionniste de nuit (temps partiel) — Aparthotel Adagio Petite France</h3>
+      <span class="when">Strasbourg · 2024 – juil. 2026</span>
     </div>
     <ul>
-      <li>Gestion autonome de l'établissement de nuit ; accueil international en français et en anglais</li>
-      <li>Traitement quotidien de données clients sensibles (identité, paiement, séjours) dans un PMS soumis au RGPD</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <div class="job-head">
-      <h3>Employé expert — Formation &amp; service client — Five Guys</h3>
-      <span class="when">Strasbourg · 2020 – 2023</span>
-    </div>
-    <ul>
-      <li>Formation des nouveaux collaborateurs aux standards de service · gestion de situations critiques</li>
+      <li>Sécurisé chaque nuit, en autonomie, les données d'une centaine de clients (identité, paiement) dans le PMS OPERA soumis au RGPD — l'application quotidienne des règles que je rédige le jour</li>
     </ul>
   </div>
 </section>
@@ -216,7 +218,7 @@
   <div class="job">
     <div class="job-head">
       <h3>MOOC « L'Atelier RGPD » — CNIL</h3>
-      <span class="when">En cours · 2026</span>
+      <span class="when">Attestation obtenue · juillet 2026</span>
     </div>
   </div>
   <div class="job">
